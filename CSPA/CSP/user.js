@@ -4,7 +4,7 @@ const connection = require('./connection');
 
 // Get all students (for example purposes)
 router.get('/get', (req, res) => {
-    var query = "SELECT * FROM student";
+    var query = "SELECT * FROM register";
     connection.query(query, (err, results) => {
         if (!err) {
             return res.status(200).json(results);
@@ -16,9 +16,9 @@ router.get('/get', (req, res) => {
 });
 
 // Delete a student by name
-router.delete('/student/:name', (req, res) => {
+router.delete('/register/:name', (req, res) => {
     const studentId = req.params.name;
-    var query = "DELETE FROM student WHERE name = ?";
+    var query = "DELETE FROM register WHERE name = ?";
     connection.query(query, [studentId], (err, result) => {
         if (err) {
             console.error('Error deleting data: ', err);
@@ -32,7 +32,7 @@ router.delete('/student/:name', (req, res) => {
 // Update a student by name
 router.patch('/update', (req, res) => {
     let user = req.body;
-    var query = "UPDATE student SET age = ? WHERE name = ?";
+    var query = "UPDATE register SET age = ? WHERE name = ?";
     connection.query(query, [user.age, user.name], (err, results) => {
         if (!err) {
             if (results.affectedRows == 0) {
@@ -48,7 +48,7 @@ router.patch('/update', (req, res) => {
 // Insert a new student
 router.post('/use', (req, res) => {
     const use = req.body;
-    var query = "INSERT INTO student (name, age) VALUES (?, ?)";
+    var query = "INSERT INTO register (name, age) VALUES (?, ?)";
     connection.query(query, [use.name, use.age], (err) => {
         if (err) {
             console.error('Error inserting data: ', err);
