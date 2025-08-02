@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crop Rotation Survey</title>
+	
+</head>
+<body>
+	<div class="container">
+		<h1>plants Rotation Survey</h1>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+			<label for="farm-size">Farm Size (acres):</label>
+			<input type="number" id="farm-size" name="farm-size"><br><br>
+			<label for="crops-grown">Crops Grown (select all that apply):</label>
+			<select multiple id="crops-grown" name="crops-grown">
+				<option value="corn">Corn</option>
+				<option value="soybeans">Soybeans</option>
+				<option value="wheat">Wheat</option>
+				<option value="other">Other (please specify)</option>
+			</select><br><br>
+			<label for="rotation-pattern">Crop Rotation Pattern:</label>
+			<select id="rotation-pattern" name="rotation-pattern">
+				<option value="annual">Annual rotation (e.g. corn-soybeans)</option>
+				<option value="biennial">Biennial rotation (e.g. corn-wheat-soybeans)</option>
+				<option value="other">Other (please specify)</option>
+			</select><br><br>
+			<label for="comments">Additional Comments:</label>
+			<textarea id="comments" name="comments"></textarea><br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>
+
+

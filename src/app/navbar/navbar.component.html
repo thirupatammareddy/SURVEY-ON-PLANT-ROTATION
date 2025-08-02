@@ -1,0 +1,93 @@
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<nav class="navbar">
+  
+  <div class="menu-icon" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!--
+  <a routerLink="/" class="logo">
+    <img src="https://img.freepik.com/free-vector/crop-rotation-concept-illustration_114360-25162.jpg" alt="Logo" class="logo-image">
+  </a> -->
+  <div class="nav-links">
+    <ul class="nav-links">
+      <li><a routerLink="home">HOME</a></li>
+      <li><a routerLink="/contact">CONTACT US</a></li>
+      <li><a routerLink="/about">ABOUT US</a></li>
+      <li><a routerLink="implementation">Crops<i class="fas-fa-caret-down"></i></a>
+        <ul class="down">
+          <li><a routerLink="benefits">Benefits</a></li>
+          <li><a routerLink="temperature">Temperature</a></li>
+          <li><a routerLink="rainfall">Rainfall</a></li>  
+        </ul>
+          <li><a routerLink="soilanalysis">Soilanalysis<i class="fas-fa-caret-down"></i></a>
+          <ul class="down">
+            <li><a routerLink="fertilizers">fertilizers</a></li>
+          </ul>
+      <li><a routerLink="/register">REGISTER</a></li> <!-- Added Register link -->
+    </ul>
+
+  </div>
+
+  <div class="profile-container" (click)="toggleProfileMenu()">
+    <div class="profile-icon">
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="profile-menu" *ngIf="isProfileMenuOpen">
+      <ul>
+        <li><a routerLink="/profile">Profile</a></li>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/settings">survey-form</a></li>
+        <li><a routerLink="/login">Log out</a></li>
+      </ul>
+    </div>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        </div>
+        </nav>
+  
+  </div>
+</nav>
+
+<!-- <div class="side-menu">
+  <div class="side-menu-content">
+    <div class="side-menu-items">
+      <ul>
+        <li>
+          <a routerLink="/">
+            <span class="menu-text">Home</span>
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/businesses">
+            <span class="menu-text">Businesses</span>
+            <i class="fas fa-briefcase"></i>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact">
+            <span class="menu-text">Contact</span>
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about">
+            <span class="menu-text">About</span>
+            <i class="fas fa-info-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<div class="backdrop" *ngIf="isMenuOpen" (click)="toggleMenu()"></div>
+</body>
